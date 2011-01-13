@@ -27,7 +27,7 @@ public class BudgetReports
 
             // First, load JasperDesign from XML and compile it into
             // JasperReport
-            JasperDesign jasperDesign = JRXmlLoader.load("../../accounts/AccountBudget.jrxml");
+            JasperDesign jasperDesign = JRXmlLoader.load("AccountBudget.jrxml");
             JasperReport jasperReport = JasperCompileManager.compileReport(jasperDesign);
             // Second, create a map of parameters to pass to the report.
             Map parameters = new HashMap();
@@ -43,7 +43,7 @@ public class BudgetReports
                     conn);
             // You can use JasperPrint to create PDF
             JasperExportManager.exportReportToPdfFile(jasperPrint,
-                    "../../accounts/BudgetReport" + args[0] + ".pdf");
+                    "BudgetReport" + args[0] + ".pdf");
             // Or to view report in the JasperViewer
             // JasperViewer.viewReport(jasperPrint);
         }
